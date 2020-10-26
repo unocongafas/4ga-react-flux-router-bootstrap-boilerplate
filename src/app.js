@@ -5,6 +5,8 @@ import {
   Route
 } from "react-router-dom";
 
+import injectContext from "./store"
+
 import Footer from "./components/footer.js"
 import Navbar from "./components/navbar.js"
 
@@ -13,7 +15,7 @@ import About from "./pages/about.js"
 import Contact from "./pages/contact.js"
 import User from "./pages/user.js"
 
-export default function(props) {
+export default injectContext(function(props) {
     return (
         <Router>
             <Navbar />
@@ -41,4 +43,4 @@ export default function(props) {
             <Footer />
         </Router>
     )
-}
+})
